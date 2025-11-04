@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sebastian Sarmiento | Portfolio</title>
+		<meta name="description" content="Sebastian Sarmiento — Computer Science student and aspiring Software Engineer. Clean, minimal portfolio with projects and contact.">
+		<meta name="theme-color" content="#ffffff">
+		<meta property="og:title" content="Sebastian Sarmiento | Portfolio">
+		<meta property="og:description" content="Computer Science student • Aspiring Software Engineer.">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="profile.jpg">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Sebastian Sarmiento | Portfolio">
+		<meta name="twitter:description" content="Computer Science student • Aspiring Software Engineer.">
+		<meta name="twitter:image" content="profile.jpg">
+		<link rel="stylesheet" href="style.css">
+		<link rel="preload" as="image" href="profile.jpg">
+		<link rel="icon" href="profile.jpg" type="image/jpeg">
+	</head>
+	<body>
+		<main class="container">
+			<header>
+				<h1>Sebastian Sarmiento</h1>
+				<p>4th year BS Computer Science • Aspiring Software Engineer</p>
+				<nav>
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+				<button class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="Toggle dark mode">Toggle theme</button>
+			</header>
+
+			<section id="home" class="intro-section">
+				<div class="intro-content">
+					<h1>BSCSSE</h1>
+					<p class="subhead">Computer Science Student • Aspiring Software Engineer</p>
+					<p>I'm Sebastian, a CS student exploring software engineering and web development. I enjoy building simple, reliable interfaces and solving practical problems.</p>
+					<div class="btn-row">
+						<a href="#about" class="enter-btn">Learn more</a>
+						<a href="Sebastian_Sarmiento_Resume.pdf" target="_blank" rel="noopener noreferrer" class="enter-btn enter-btn--secondary">
+							View Resume
+						</a>
+						<a href="Sebastian_Sarmiento_Resume.pdf" download class="enter-btn enter-btn--secondary">
+							Download Resume
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="about">
+				<h2>About</h2>
+				<div class="about-container">
+					<img src="profile.jpg" alt="Portrait of Sebastian Sarmiento" class="profile-pic" loading="lazy" decoding="async">
+					<div class="about-text">
+						<p>Hello! I'm Sebastian Sarmiento, a 4th year BS Computer Science student specializing in Software Engineering. I enjoy troubleshooting hardware and I'm actively improving my skills in web development and programming.</p>
+						<p>Tech enthusiast with hands-on IT support experience and a growing interest in creating clean, accessible user interfaces.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="projects">
+				<h2>Projects</h2>
+				<div class="projects-container">
+					<div class="project-card">
+						<h3>Personal Portfolio</h3>
+						<p>A responsive, minimal portfolio built with HTML and CSS.</p>
+						<a class="project-link" href="https://github.com/sebsrmnto" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+						<a class="project-link" href="project-template.html">Read more</a>
+					</div>
+					<div class="project-card">
+						<h3>Coming Soon</h3>
+						<p>Exploring ideas worth shipping.</p>
+						<a class="project-link" href="https://github.com/sebsrmnto" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+					</div>
+					<div class="project-card">
+						<h3>Coming Soon</h3>
+						<p>Learning in public. Stay tuned.</p>
+						<a class="project-link" href="https://github.com/sebsrmnto" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="skills">
+				<h2>Skills</h2>
+				<div class="skills-container">
+					<div class="skill">HTML</div>
+					<div class="skill">CSS</div>
+					<div class="skill">Troubleshooting Hardware</div>
+					<div class="skill">IT Support</div>
+				</div>
+			</section>
+
+			<footer class="site-footer" id="contact">
+				<p>Get in touch</p>
+				<nav class="footer-nav" aria-label="Contact links">
+					<ul>
+						<li><a href="mailto:sebastiansarmientoqwe@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Sebastian,%20I%20found%20your%20portfolio%20and%20wanted%20to%20reach%20out." title="Email Sebastian">Email</a></li>
+						<li><a href="https://github.com/sebsrmnto" rel="me noopener noreferrer" target="_blank" title="Sebastian on GitHub">GitHub</a></li>
+						<li><a href="https://www.linkedin.com/in/sssarmiento2004" rel="me noopener noreferrer" target="_blank" title="Sebastian on LinkedIn">LinkedIn</a></li>
+					</ul>
+				</nav>
+				<small>© <span id="year"></span> Sebastian Sarmiento</small>
+			</footer>
+		</main>
+		<script>
+			const yearEl = document.getElementById('year');
+			if (yearEl) yearEl.textContent = new Date().getFullYear();
+		</script>
+		<script src="script.js" defer></script>
+	</body>
+</html>
