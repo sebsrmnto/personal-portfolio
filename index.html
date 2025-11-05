@@ -7,12 +7,12 @@
 		<meta name="description" content="Sebastian Sarmiento — Computer Science student and aspiring Software Engineer. Clean, minimal portfolio with projects and contact.">
 		<meta name="theme-color" content="#ffffff">
 		<meta property="og:title" content="Sebastian Sarmiento | Portfolio">
-		<meta property="og:description" content="Computer Science student • Aspiring Software Engineer.">
+		<meta property="og:description" content="Computer Science student | Aspiring Software Engineer.">
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="profile.jpg">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="Sebastian Sarmiento | Portfolio">
-		<meta name="twitter:description" content="Computer Science student • Aspiring Software Engineer.">
+		<meta name="twitter:description" content="Computer Science student | Aspiring Software Engineer.">
 		<meta name="twitter:image" content="profile.jpg">
 		<link rel="stylesheet" href="style.css">
 		<link rel="preload" as="image" href="profile.jpg">
@@ -22,12 +22,14 @@
 		<main class="container">
 			<header>
 				<h1>Sebastian Sarmiento</h1>
-				<p>4th year BS Computer Science • Aspiring Software Engineer</p>
+				<p>4th year BS Computer Science | Aspiring Software Engineer</p>
 				<nav>
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="projects.html">Projects</a></li>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -35,14 +37,127 @@
 			<section id="home" class="intro-section">
 				<div class="intro-content">
 					<h1>BSCSSE</h1>
-					<p class="subhead">Computer Science Student • Aspiring Software Engineer</p>
+					<p class="subhead">Computer Science Student | Aspiring Software Engineer</p>
 					<p>I'm Sebastian, a CS student exploring software engineering and web development. I enjoy building simple, reliable interfaces and solving practical problems.</p>
 					<div class="btn-row">
-						<a href="about.html" class="enter-btn">About Me</a>
-						<a href="projects.html" class="enter-btn enter-btn--secondary">Projects</a>
+						<a href="#about" class="enter-btn">Learn more</a>
+						<a href="Sebastian_Sarmiento_Resume.pdf" target="_blank" rel="noopener noreferrer" class="enter-btn enter-btn--secondary">
+							View Resume
+						</a>
+						<a href="Sebastian_Sarmiento_Resume.pdf" download class="enter-btn enter-btn--secondary">
+							Download Resume
+						</a>
 					</div>
 				</div>
-				
+				<div class="hero-media">
+					<div class="hero-card">
+						<img src="profile.jpg" alt="Portrait of Sebastian">
+					</div>
+				</div>
+				<a href="#about" class="scroll-cue" aria-label="Scroll to About">
+					<span>Scroll</span>
+					<span class="chevron" aria-hidden="true">⌄</span>
+				</a>
+			</section>
+
+			<section id="about">
+				<h2 class="section-title">About Me</h2>
+				<p class="section-subhead">I'm an aspiring developer who enjoys solving practical problems and building clean, user‑friendly interfaces. I have experience in IT support, technical and software troubleshooting, and I'm actively growing in web development.</p>
+				<div class="about-container">
+					<img src="profile.jpg" alt="Portrait of Sebastian Sarmiento" class="profile-pic" loading="lazy" decoding="async">
+					<div class="about-text">
+						<div class="feature-cards">
+							<div class="feature-card">
+								<div class="feature-icon" aria-hidden="true">🛠️</div>
+								<h3>IT Support</h3>
+								<p>Hands-on troubleshooting of hardware and systems to keep things running smoothly.</p>
+							</div>
+							<div class="feature-card">
+								<div class="feature-icon" aria-hidden="true">🧩</div>
+								<h3>Tech & Software Troubleshooting</h3>
+								<p>Methodical debugging of software issues with clear, simple fixes and documentation.</p>
+							</div>
+							<div class="feature-card">
+								<div class="feature-icon" aria-hidden="true">⌨️</div>
+								<h3>Web Development</h3>
+								<p>Building accessible, minimalist UI with semantic HTML and modern CSS/JS.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="skills">
+				<h2 class="section-title">My Tech Stack</h2>
+				<p class="section-subhead">Tools I use to design and build clean, responsive, and reliable interfaces.</p>
+				<div class="stack-icons" aria-label="Primary technologies">
+					<div class="stack-icon" title="HTML"><span aria-hidden="true">HTML</span></div>
+					<div class="stack-icon" title="CSS"><span aria-hidden="true">CSS</span></div>
+					<div class="stack-icon" title="JavaScript"><span aria-hidden="true">JS</span></div>
+				</div>
+				<div class="skills-container">
+					<div class="skill">HTML</div>
+					<div class="skill">CSS</div>
+					<div class="skill">JavaScript</div>
+					<div class="skill">Troubleshooting Hardware</div>
+					<div class="skill">IT Support</div>
+				</div>
+			</section>
+
+			<section id="capabilities" class="capabilities">
+				<h2 class="section-title">What Can I Do</h2>
+				<p class="section-subhead">Turning ideas into simple, fast, and user‑friendly web experiences.</p>
+				<div class="feature-cards feature-cards--services">
+					<div class="feature-card">
+						<div class="feature-icon" aria-hidden="true">📄</div>
+						<h3>Static Websites</h3>
+						<p>Fast, lightweight sites perfect for portfolios and profiles.</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon" aria-hidden="true">⚡</div>
+						<h3>Single‑Page Feel</h3>
+						<p>Smooth navigation and polished interactions for a modern feel.</p>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon" aria-hidden="true">🎯</div>
+						<h3>Redesign & Optimize</h3>
+						<p>Improve clarity, accessibility, and performance without bloat.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="projects">
+				<h2>Projects</h2>
+				<div class="projects-container">
+					<div class="project-card">
+						<h3>Personal Portfolio</h3>
+						<p>A responsive, minimal portfolio built with HTML and CSS.</p>
+						<a class="project-link" href="https://github.com/sebsrmnto" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+						<a class="project-link" href="project-template.html">Read more</a>
+					</div>
+					<div class="project-card">
+						<h3>Coming Soon</h3>
+						<p>Exploring ideas worth shipping.</p>
+						<a class="project-link" href="https://github.com/sebsrmnto" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+					</div>
+					<div class="project-card">
+						<h3>Coming Soon</h3>
+						<p>Learning in public. Stay tuned.</p>
+						<a class="project-link" href="https://github.com/sebsrmnto" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="skills">
+				<h2>Skills</h2>
+				<div class="skills-container">
+					<div class="skill">HTML</div>
+					<div class="skill">CSS</div>
+					<div class="skill">JavaScript</div>
+					<div class="skill">Troubleshooting Hardware</div>
+					<div class="skill">IT Support</div>
+					
+				</div>
 			</section>
 
 

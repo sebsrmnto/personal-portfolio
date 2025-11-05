@@ -1,14 +1,25 @@
-// Active nav highlighting based on URL path
+// Active nav highlighting based on visible section
 (function () {
+    const sectionIds = ["home", "about", "projects", "skills", "contact"];
     const links = Array.from(document.querySelectorAll('header nav a'));
-    const path = location.pathname.split('/').pop() || 'index.html';
-    links.forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href) return;
-        const matches = (href === path) || (href === 'index.html' && path === '');
-        link.classList.toggle('is-active', matches);
-        if (matches) link.setAttribute('aria-current', 'page');
-        else link.removeAttribute('aria-current');
+    const idToLink = new Map(links.map(a => [a.getAttribute('href')?.replace('#',''), a]));
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.id;
+            const link = idToLink.get(id);
+            if (!link) return;
+            if (entry.isIntersecting) {
+                links.forEach(l => { l.classList.remove('is-active'); l.removeAttribute('aria-current'); });
+                link.classList.add('is-active');
+                link.setAttribute('aria-current', 'page');
+            }
+        });
+    }, { threshold: 0.6 });
+
+    sectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
     });
 })();
 
@@ -76,26 +87,26 @@
 })();
 
 
-// Page fade transitions between internal links
+// (removed) page fade transitions
+
+
+// Section reveal animations
 (function () {
-    document.addEventListener('DOMContentLoaded', () => {
-        document.body.classList.add('is-loaded');
-    });
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const sections = Array.from(document.querySelectorAll('main section'));
+    if (prefersReduced || sections.length === 0) return;
 
-    function isInternalLink(anchor) {
-        if (!anchor || anchor.target === '_blank') return false;
-        const url = new URL(anchor.href, location.href);
-        return url.origin === location.origin && !url.hash && !anchor.hasAttribute('download') && !anchor.getAttribute('rel');
-    }
+    sections.forEach(sec => sec.classList.add('reveal'));
 
-    document.addEventListener('click', (e) => {
-        const anchor = e.target.closest('a');
-        if (!anchor || !isInternalLink(anchor)) return;
-        e.preventDefault();
-        document.body.classList.add('is-leaving');
-        const href = anchor.getAttribute('href');
-        setTimeout(() => { window.location.href = href; }, 180);
-    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    sections.forEach(sec => observer.observe(sec));
 })();
-
 
