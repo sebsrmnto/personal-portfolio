@@ -36,9 +36,9 @@
 	 Page container
   ------------------------- */
   .container {
-    max-width: 1000px;
+    max-width: 100%;
     margin: 10px auto;
-	padding: 20px;
+    padding: 20px;
   }
   
   /* -------------------------
@@ -130,6 +130,10 @@
   }
   
   .profile-pic { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; flex-shrink: 0; border: 2px solid #000; }
+  /* Centered About layout */
+  .about-centered { max-width: 1100px; margin: 0 auto; }
+  .about-avatar-wrap { display: flex; justify-content: center; margin: 10px 0 16px; }
+  .about-grid { margin-top: 6px; }
   /* Feature cards (About + Services) */
   .feature-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 6px; }
   .feature-card { background: #fff; border: 1px solid #e8e8e8; border-radius: 14px; padding: 14px; text-align: center; box-shadow: 2px 2px 0 #00000010; }
@@ -137,6 +141,82 @@
   .feature-card p { margin: 0; color: var(--muted); font-size: 14px; }
   .feature-icon { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; background: var(--card); border: 1px solid #eee; font-size: 22px; }
   .feature-cards--services { margin-top: 10px; }
+  
+  /* -------------------------
+     Capabilities (What Can I Do)
+  ------------------------- */
+  .capabilities {
+    background: var(--card);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 20px;
+  }
+  [data-theme="dark"] .capabilities { box-shadow: none; border: 1px solid #222; }
+
+  .capabilities-inner { max-width: 1100px; margin: 0 auto; }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .service-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    padding: 18px 16px;
+    box-shadow: 2px 2px 0 #00000010;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 180px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  [data-theme="dark"] .service-card { background: #0f0f0f; border-color: #222; box-shadow: none; }
+
+  .service-card:hover { transform: translateY(-4px); box-shadow: 6px 6px 0 #00000014; }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid #eee;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  [data-theme="dark"] .service-icon { border-color: #222; color: #eaeaea; }
+
+  .service-card h3 { margin: 6px 0 6px; font-size: 18px; font-weight: 800; color: var(--accent); }
+  .service-card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  /* -------------------------
+     Unified Skills (What I Do + Tech Stack)
+  ------------------------- */
+  #skills { margin-top: 20px; }
+  .skills-overview__inner { max-width: 1100px; margin: 0 auto; }
+  .skills-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .skills-col { background: #fff; border: 1px solid #e8e8e8; border-radius: 14px; padding: 16px; box-shadow: 2px 2px 0 #00000010; }
+  [data-theme="dark"] .skills-col { background: #0f0f0f; border-color: #222; box-shadow: none; }
+  .skills-col__title { margin: 0 0 10px; font-size: 18px; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tag { background: #fff; color: #000; border: 1px solid #e5e5e5; padding: 8px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; }
+  [data-theme="dark"] .tag { background: #101010; color: #f0f0f0; border-color: #222; }
+  .other-skill-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .other-skill { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: start; background: var(--card); border: 1px solid #eee; border-radius: 12px; padding: 10px; }
+  [data-theme="dark"] .other-skill { border-color: #222; }
+  .other-skill__icon { width: 40px; height: 40px; border-radius: 10px; background: #fff; border: 1px solid #e8e8e8; display: inline-flex; align-items: center; justify-content: center; color: #111; }
+  [data-theme="dark"] .other-skill__icon { background: #0f0f0f; border-color: #222; color: #eaeaea; }
+  .other-skill strong { display: block; margin-top: 2px; }
+  .other-skill p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
   
   /* -------------------------
 	 Projects section
@@ -201,19 +281,15 @@
 	box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   }
   [data-theme="dark"] #skills { box-shadow: none; border: 1px solid #222; }
-  
-  #skills h2 {
-	color: var(--accent);
-	margin-top: 0;
-  }
-  
-  .stack-icons { display: flex; gap: 14px; justify-content: center; margin: 8px 0 10px; }
-  .stack-icon { width: 64px; height: 64px; border: 1px solid #e8e8e8; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; background: #fff; }
-  .skills-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 6px; }
-  
-  .skill { background: #fff; color: #000; border: 1px solid #e5e5e5; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: 13px; transition: transform 0.2s, background 0.2s; }
-  
-  .skill:hover { transform: translateY(-2px); background: #f6f6f6; }
+  #skills h2 { color: var(--accent); margin-top: 0; }
+  .skills-inner { max-width: 1100px; margin: 0 auto; }
+  .badge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 10px; }
+  .badge { background: #fff; border: 1px solid #e8e8e8; border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 10px; box-shadow: 2px 2px 0 #00000010; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  [data-theme="dark"] .badge { background: #0f0f0f; border-color: #222; box-shadow: none; }
+  .badge:hover { transform: translateY(-3px); box-shadow: 6px 6px 0 #00000014; }
+  .badge-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--card); border: 1px solid #eee; display: inline-flex; align-items: center; justify-content: center; color: #111; }
+  [data-theme="dark"] .badge-icon { border-color: #222; color: #eaeaea; }
+  .badge span { font-weight: 700; color: var(--accent); }
   
   /* -------------------------
 	 Responsive (mobile)
@@ -224,6 +300,7 @@
 	.hero-media { order: -1; }
 	.about-container { grid-template-columns: 1fr; }
 	.profile-pic { margin-bottom: 12px; }
+    .skills-two-col { grid-template-columns: 1fr; }
   }
 
   /* -------------------------
